@@ -20,7 +20,7 @@ switch(HashMethod)
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hash method = USPLH
         case 'USPLH'
-        addpath('.\hash_toolbox\SPLH_release\USPLH\');;
+        addpath('.\hash_toolbox\SPLH_release\USPLH\');
         USPLHparam.nbits=codelength;
         USPLHparam.eta=0.125;
         USPLHparam = trainUSPLH(train_x, USPLHparam);
@@ -43,7 +43,7 @@ switch(HashMethod)
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hash method = ITQ
         case 'ITQ'
-        addpath('.\hash_toolbox\ITQ\release');
+        addpath('.\hash_toolbox\ITQ_release');
         % PCA
         [pc, l] = eigs(cov(train_x),codelength);
         Fea_pca = train_x * pc;

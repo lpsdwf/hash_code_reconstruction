@@ -55,7 +55,7 @@ switch(method_i)
         B2=compactbit((test_x*pc)>0);
         
     case 'ITQ'
-        addpath('.\hash_toolbox\ITQ\release');
+        addpath('.\hash_toolbox\ITQ_release');
         Fea=double([train_x; test_x]);
         clear train_x test_x
         sampleMean = mean(Fea,1);
