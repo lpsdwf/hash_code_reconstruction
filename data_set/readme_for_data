@@ -1,2 +1,3 @@
 The datasets used in the experiments are oversized and cannot be uploaded to Github. 
-If you want to run the demo, you can send an email to me via lipeng@upc.edu.cn for the orginal dataset.
+I only uploaded a mini set of Tiny-100K for demo running.
+If you want to run the code on the whole dataset, you can email to me via lipeng@upc.edu.cn for the orginal dataset.
