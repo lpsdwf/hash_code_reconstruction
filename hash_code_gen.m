@@ -16,7 +16,7 @@ switch(method_i)
         B2=compactbit(B2);
         
     case 'SH'
-        addpath('.\hash_toolbox\spectral_hashing\');
+        addpath(genpath('.\hash_toolbox\spectral_hashing'));
         SHparam.nbits = codelength;
         tic
         SHparam = trainSH(train_x, SHparam);
@@ -26,7 +26,7 @@ switch(method_i)
        
         
     case 'USPLH'
-        addpath('.\hash_toolbox\SPLH_release\USPLH\');
+        addpath(genpath('.\hash_toolbox\SPLH_release'));
         USPLHparam.nbits=codelength;
         USPLHparam.eta=0.125;
         tic
@@ -98,7 +98,7 @@ switch(method_i)
         B2=bData((TrainNum+1):end,:);
 
     case 'IMH'
-        addpath('.\hash_toolbox\IMH_release-master');
+        addpath(genpath('.\hash_toolbox\IMH_release-master'));
         tic
         AnchorNum=500;
         Anchors=GetAnchors(train_x,AnchorNum,0.01);

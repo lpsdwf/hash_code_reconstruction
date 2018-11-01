@@ -12,7 +12,7 @@ switch(HashMethod)
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hash method = SH
         case 'SH'
-        addpath('.\hash_toolbox\spectral_hashing\');
+        addpath(genpath('.\hash_toolbox\spectral_hashing\'));
         SHparam.nbits = codelength;
         SHparam = trainSH(train_x, SHparam);
         [B1,TTr] = compressSH(train_x, SHparam);
@@ -20,7 +20,7 @@ switch(HashMethod)
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hash method = USPLH
         case 'USPLH'
-        addpath('.\hash_toolbox\SPLH_release\USPLH\');
+        addpath(genpath('.\hash_toolbox\SPLH_release\USPLH\'));
         USPLHparam.nbits=codelength;
         USPLHparam.eta=0.125;
         USPLHparam = trainUSPLH(train_x, USPLHparam);
@@ -72,7 +72,7 @@ switch(HashMethod)
 
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% hash method = IMH
         case 'IMH'
-        addpath('.\hash_toolbox\IMH_release-master');
+        addpath(genpath('.\hash_toolbox\IMH_release-master'));
         AnchorNum=500;
         Anchors=GetAnchors(train_x,AnchorNum,0.01);
         % Set parameters
@@ -89,6 +89,15 @@ end
 
 
 %%%%%%%%%%%%%% Hash code reconstruction
+% TTr=TTr';
+% %%% Normalize data to have zero mean per pixel
+% data.mean = mean(TTr,2);
+% TTr = TTr - data.mean * ones(1,size(TTr,2));
+% %%% Make mean variance to be 1.
+% data.scale  = 1/mean(std(TTr,0,2));
+% TTr = TTr * data.scale;
+% TTr=TTr';
+
 sampleMean = mean(TTr,1);
 TTr = (TTr - repmat(sampleMean,size(TTr,1),1));
 
