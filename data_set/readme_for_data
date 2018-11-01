@@ -1,3 +1,8 @@
 The datasets used in the experiments are oversized and cannot be uploaded to Github. 
 I only uploaded a mini set of Tiny-100K for demo running.
 If you want to run the code on the whole dataset, you can email to me via lipeng@upc.edu.cn for the orginal dataset.
+The data is store as a .mat file which includes the following elements:
+train_x : training and retrieval data, dimensions: n*d, where n is the number of training images and d is the dimensionality of features
+test_x: testing set for queries, dimensions:m*d, where m is the number of testing images and d is the dimensionality of features
+groundtruth: the image id of groundtruth nearest neighbors in the Euclidean space for testing images, dimensions: m*k, where m is is the 
+number of testing images and k is the number of nearest neighbors which is defined by 2% of total images. 
